@@ -41,7 +41,7 @@ Then wire it into your agents:
 | --- | --- | --- |
 | Claude Code | `~/.claude/CLAUDE.md` | `permissions.additionalDirectories` in `~/.claude/settings.json`: read and edit without prompts |
 | Codex (if `~/.codex` exists) | `~/.codex/AGENTS.md` | a `second-brain` permission profile in `~/.codex/config.toml`: the built-in `:workspace` plus write access to the brain, made the default. `.git` stays read-only, so commit and push still ask. Needs a Codex release with permission profiles |
-| Gemini CLI (if `~/.gemini` exists) | `~/.gemini/GEMINI.md` | `context.includeDirectories` in `~/.gemini/settings.json` |
+| Gemini CLI and Antigravity (if `~/.gemini` exists) | `~/.gemini/GEMINI.md`, read by both (checked with the Antigravity CLI, `agy` 1.1.12) | `context.includeDirectories` in `~/.gemini/settings.json` for Gemini CLI; the Antigravity CLI read the brain without it |
 
 If your Codex config already sets its own sandbox (`sandbox_mode`, `default_permissions` or a `[permissions]` table), or your Gemini settings are not plain JSON, `setup.sh` leaves that file alone and tells you what to add. Safe to re-run. Needs `python3`.
 

@@ -77,8 +77,8 @@ print("added the second-brain permission profile to", path)
 PY
 fi
 
-# 3. Gemini CLI (~/.gemini): the pointer in GEMINI.md, and the brain as an included
-#    directory so every session can read and edit it.
+# 3. Gemini CLI and Antigravity (~/.gemini): the pointer in GEMINI.md, which both read,
+#    and the brain as a Gemini CLI included directory so every session can reach it.
 if [ -d "$HOME/.gemini" ]; then
   add_pointer "$HOME/.gemini/GEMINI.md"
   python3 - "$BRAIN" <<'PY'
